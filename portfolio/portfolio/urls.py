@@ -1,12 +1,10 @@
 
 from django.contrib import admin
 from django.urls import path,include
-from . import views
+from django.conf.urls.static import static
+from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('contactus/', views.contact_us, name='contact'),
-    path('aboutus/', views.about_us, name='about'),
-    path('payment/', views.payment, name='payment'),
+    path('', include("index.urls")),
     path('employee/', include("employee.urls")),
-]
+]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

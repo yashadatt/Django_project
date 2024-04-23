@@ -7,7 +7,7 @@
 
 
 {%  block content%}
-{% include 'slider.html'%}
+{% include 'slider.html' with slider_data=slider_data %}
 <!-- ======= About Us Section ======= -->
     <section id="about-us" class="about-us">
       <div class="container" data-aos="fade-up">
@@ -250,53 +250,13 @@
 
         <div class="row no-gutters clients-wrap clearfix" data-aos="fade-up">
 
-          <div class="col-lg-3 col-md-4 col-6">
+          {% for client in client_data %}
+            <div class="col-lg-3 col-md-4 col-6">
             <div class="client-logo">
-              <img src="{% static 'img/clients/client-1.png'%}" class="img-fluid" alt="">
+              <img src="{{ client.icon.url }}" class="img-fluid" alt="">
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="{% static 'img/clients/client-2.png'%}" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="{% static 'img/clients/client-3.png'%}" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="{% static 'img/clients/client-4.png'%}" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="{% static 'img/clients/client-5.png'%}" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="{% static 'img/clients/client-6.png'%}" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="{% static 'img/clients/client-7.png'%}" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="{% static 'img/clients/client-8.png'%}" class="img-fluid" alt="">
-            </div>
-          </div>
+          {% endfor %}
 
         </div>
 

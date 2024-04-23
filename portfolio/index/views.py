@@ -21,9 +21,5 @@ def about_us(request):
     return render(request,"about.html")
 
 
-def contact_us(request):
-    return render(request,"contactus.html")
-
-
 def payment(request):
     return HttpResponse("payment page")

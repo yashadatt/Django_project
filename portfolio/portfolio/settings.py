@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os.path
 from pathlib import Path
-
+from django.contrib.messages import constants as messages
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,6 +28,13 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert_info',
+    messages.INFO: 'alert_info',
+    messages.WARNING: 'alert_warning',
+    messages.SUCCESS: 'alert_success',
+    messages.ERROR: 'alert_danger'
+}
 # Application definition
 
 INSTALLED_APPS = [
